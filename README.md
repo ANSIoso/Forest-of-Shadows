@@ -8,17 +8,19 @@ A horror video game where the player explores a haunted forest, designed to crea
 
 <div align="center">
   <table>
-    <tr>
-      <td align="center" width="50%" style="padding: 10px;">
-        <img src="./doc/doc_img/schermata_gioco_pc.png" alt="PC screenshot" width="90%" style="border-radius: 8px;" />
-        <br />
-        <em>PC gameplay view</em>
-      </td>
-      <td align="center" width="50%" style="padding: 10px;">
-        <img src="./doc/doc_img/schermata_gioco_mobile.png" alt="Mobile screenshot" width="90%" style="border-radius: 8px;" />
-        <br />
-        <em>Mobile gameplay view</em>
-      </td>
+    <tr>    
+        <td align="center" style="padding: 10px;">
+            <img src="./doc/doc_img/schermata_gioco_pc.png" alt="PC screenshot" width="90%" style="border-radius: 8px;" />
+            <br />
+            <em>PC gameplay view</em>
+        </dr>
+    </tr>
+    <tr>        
+        <td align="center" width="50%" style="padding: 10px;">
+            <img src="./doc/doc_img/schermata_gioco_mobile.png" alt="Mobile screenshot" width="90%" style="border-radius: 8px;" />
+            <br />
+            <em>Mobile gameplay view</em>
+        </dr>
     </tr>
   </table>
 </div>
