@@ -32,11 +32,54 @@ body {
 }
 
 #uiCanvas {
-    z-index: 9;
+    z-index: 8;
+    transition: opacity 0.5s;
 }
 
 #canvas {
     background-color: rgb(51, 50, 50);
+    transition: opacity 0.5s;
+}
+
+@keyframes loadingFade {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#loadingDiv {
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: rgb(51, 50, 50);
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: opacity 0.5s ease-in;
+}
+
+#loadingDiv>p {
+    position: relative;
+
+    font-size: xxx-large;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: loadingFade 1s ease-in-out infinite;
 }
 
 .controls {

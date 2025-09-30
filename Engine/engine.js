@@ -3,6 +3,7 @@ class Engine {
     ctx;    // variabile che ospita contesto 2d
     gl;     // variabile che ospita contesto webgl
     ext;    // variabile che ospita estensione webgl per gestione depth texture
+    engineStatus;
 
     // - shader programs
     meshProgramInfo;
@@ -63,6 +64,7 @@ class Engine {
     constructor(canvas, uiCanvas, game) {
         this.screenFocused = false;
         this.game = game;
+        this.engineStatus = "Loading";
 
         // estrazione dei contesti per disegnare sui 2 canvas
         this.gl = canvas.getContext("webgl");
@@ -394,7 +396,6 @@ class Engine {
 
     // metodo utilizzato per caricare tutte le mash che sono utilizzate nel programma
     async load() {
-
         this.obj["terreno"] = await this.loadGeneralObj('./assets/modelsOBJ/grass_slab/grass_slab.obj');
 
         this.obj["fantasma"] = await this.loadGeneralObj('./assets/modelsOBJ/fantasma/fantasma.obj');
@@ -413,6 +414,7 @@ class Engine {
 
         this.obj["totem"] = await this.loadGeneralObj('./assets/modelsOBJ/mio_totem/mio.obj');
 
+        this.engineStatus = "Ready";
         this.render();
     }
 

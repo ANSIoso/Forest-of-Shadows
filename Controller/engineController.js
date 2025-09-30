@@ -17,17 +17,18 @@ class EngineContoller {
         let self = this;
 
         // assegno la funzione alle checkbox
-        SpecularChekbox.addEventListener('change', function() {
+        SpecularChekbox.addEventListener('change', function () {
             self.engine.enableSpecular = this.checked;
         });
-        NormalMapsChekbox.addEventListener('change', function() {
+        NormalMapsChekbox.addEventListener('change', function () {
             self.engine.enableNormalMaps = this.checked;
         });
-        ShadowsChekbox.addEventListener('change', function() {
+        ShadowsChekbox.addEventListener('change', function () {
             self.engine.enableShadows = this.checked;
         });
-        ShadingChekbox.addEventListener('change', function() {
+        ShadingChekbox.addEventListener('change', function () {
             self.engine.enableShading = this.checked;
         });
     }
 }
+

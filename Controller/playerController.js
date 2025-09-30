@@ -270,7 +270,7 @@ class Controller {
         // imprimo i comandi del controller nel game
         game.playerWalk(this.xStik, -this.yStik);
         // se il player si sta muovendo riproduto il rumore dei passi
-        if(this.xStik != 0 || this.yStik != 0)
+        if (this.xStik != 0 || this.yStik != 0)
             audioController.performPlayerMovmentAudio(this.game.playerRunning && this.game.playerStamina > 0);
         else
             audioController.stopPlayerMovmentAudio();
@@ -283,6 +283,7 @@ class Controller {
 const canvas = document.getElementById("canvas");
 const uiCanvas = document.getElementById("uiCanvas");
 const gameDiv = document.getElementById("gameDiv");
+const loadingDiv = document.getElementById("loadingDiv");
 
 const game = new Game();
 
@@ -292,4 +293,20 @@ const controller = new Controller(canvas, uiCanvas, gameDiv, game);
 const engineContoller = new EngineContoller(engine);
 const audioController = new AudioController();
 
+
+async function checkEngineReady() {
+    while (engine.engineStatus != "Ready") {
+        await new Promise(resolve => setTimeout(resolve, 50));
+    }
+
+    requestAnimationFrame(() => {
+        loadingDiv.style.opacity = '0';
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    loadingDiv.style.display = 'none';
+}
+
+checkEngineReady();
 engine.load();
